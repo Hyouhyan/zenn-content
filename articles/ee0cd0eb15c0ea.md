@@ -10,6 +10,14 @@ published: false
 - サーバー機
   - Raspberry Pi 4 Model B / 8GB
 - OS
+  - Debian GNU/Linux 11 (bullseye) aarch64
+
+# 基本方針
+マイクラサーバーはscreenで実行する(手動でコンソールにアクセスしたいから)。  
+systemdでサービスとして登録して、systemctlで起動・停止・再起動を行う。  
+サーバーのバックアップはGitHubで行う。Pushは1時間おきに行う。  
+毎週水曜日の7:30に再起動を行う。  
+再起動を行う前に、プレイヤーに通知を行う。
 
 # マイクラサーバーの構築
 
