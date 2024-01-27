@@ -14,18 +14,18 @@ published: false
 # マイクラサーバーの構築
 
 ```zsh
-$ mkdir ~/minecraftServer
-$ cd ~/minecraftServer
+mkdir ~/minecraftServer
+cd ~/minecraftServer
 ```
 
 buildtools.jarのダウンロード  
 ```zsh
-$ wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
+wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
 ```
 
 最新版をビルド
 ```zsh
-$ java -jar BuildTools.jar --rev latest
+java -jar BuildTools.jar --rev latest
 ```
 
 
@@ -34,12 +34,12 @@ $ java -jar BuildTools.jar --rev latest
 # バックアップ用のリポジトリ作成
 gitを有効化
 ```zsh
-$ git init ~/minecraftServer
+git init ~/minecraftServer
 ```
 
 .gitignoreを作成
 ```zsh
-$ nano .gitignore
+nano .gitignore
 ```
 
 ```.gitignore
@@ -59,22 +59,22 @@ spigot-*.jar
 
 GitHubにPush
 ```zsh
-$ git branch main
-$ git add -A
-$ git commit -m "1st"
-$ gh repo create minecraft-backup --private --source=. --remote=upstream
+git branch main
+git add -A
+git commit -m "1st"
+gh repo create minecraft-backup --private --source=. --remote=upstream
 ```
 
 # サーバー操作用スクリプトの作成
 スクリプトを置くためのディレクトリ作成
 ```zsh
-$ mkdir ~/script
-$ mkdir ~/script/mcsv
+mkdir ~/script
+mkdir ~/script/mcsv
 ```
 
 ## コミットしてGitHubにPushするするスクリプト
 ```zsh
-$ nano mcsv-backup_github.sh
+nano mcsv-backup_github.sh
 ```
 
 ```bash
@@ -92,7 +92,7 @@ git push origin main
 
 ## 開始・停止・セーブ用スクリプト
 ```zsh
-$ nano mcsv-boot.sh
+nano mcsv-boot.sh
 ```
 
 ```bash
@@ -119,7 +119,7 @@ esac
 
 # systemdに登録
 ```zsh
-$ sudo nano /lib/systemd/system/minecraftServer.service
+sudo nano /lib/systemd/system/minecraftServer.service
 ```
 
 ```service
@@ -158,7 +158,7 @@ WantedBy=multi-user.target
 
 ## 再起動用のスクリプト
 ```zsh
-$ nano mcsv-restart.sh
+nano mcsv-restart.sh
 ```
 
 ```bash
@@ -171,7 +171,7 @@ sudo systemctl start minecraftServer
 
 ## セーブ用のスクリプト
 ```zsh
-$ nano mcsv-saveall.sh
+nano mcsv-saveall.sh
 ```
 
 ```bash
@@ -183,7 +183,7 @@ bash ~/script/mcsv/mcsv-backup_github.sh
 
 ## cronに登録
 ```zsh
-$ crontab -e
+crontab -e
 ```
 
 ```cron
