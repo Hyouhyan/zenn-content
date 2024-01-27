@@ -2,8 +2,8 @@
 title: "ScreenとSystemdでMinecraftサーバーを管理し、GitHubにバックアップを取る"
 emoji: "🐕"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["Minecraft"]
-published: false
+topics: ["Minecraft", "RaspberryPi", "Ubuntu", "systemd", "GitHub"]
+published: true
 ---
 
 # 環境
