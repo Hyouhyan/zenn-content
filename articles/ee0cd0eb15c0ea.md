@@ -80,7 +80,7 @@ $ mkdir ~/script
 $ mkdir ~/script/mcsv
 ```
 
-## コミットしてGitHubにPushするするスクリプト
+## コミットしてGitHubにPushするスクリプト
 ```zsh
 $ nano mcsv-backup_github.sh
 ```
